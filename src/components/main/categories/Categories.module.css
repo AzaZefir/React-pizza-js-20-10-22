@@ -1,0 +1,26 @@
+.categories button{
+    background: #f9f9f9;
+    border-radius: 30px;
+    border: none;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #2c2c2c;
+    padding: 13px 30px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+
+  }
+  .categories button:hover {
+    background-color: #f4f4f4;
+  }
+  .categories button:active {
+    background-color: #ececec;
+  }
+  .categories button.active {
+    background-color: #282828;
+    color: #fff;
+  }
