@@ -17,6 +17,7 @@ const PizzaCard = (props) => {
     setActiveSizes(index);
     console.log(index);
   };
+  
 
   return (
     <div className={moduleCss.pizzaCard}>
