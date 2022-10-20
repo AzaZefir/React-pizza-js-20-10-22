@@ -18,7 +18,6 @@ const PizzaCard = (props) => {
     console.log(index);
   };
   
-
   return (
     <div className={moduleCss.pizzaCard}>
       <img src={props.img} alt="" />
