@@ -35,3 +35,6 @@
   letter-spacing: 0.015em;
   color: #fe5f1e;
 }
+.rotated{
+  transform: rotate(180deg);
+}

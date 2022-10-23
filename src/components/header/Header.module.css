@@ -5,11 +5,11 @@
   height: 137px;
   border-bottom: 1px solid #f6f6f6;
 }
-.wrapper > div {
+.wrapper > a > div {
   display: flex;
   align-items: center;
 }
-.wrapper >div:first-child span {
+.wrapper > a > div:first-child span {
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
@@ -24,7 +24,7 @@
   color: #7b7b7b;
   margin: 0;
 }
-.wrapper > div img {
+.wrapper > a > div img {
   margin-right: 17px;
 }
 .wrapper .btn {
@@ -51,4 +51,7 @@
   width: 2px;
   height: 25px;
   background: rgba(255, 255, 255, 0.25);
+}
+.wrapper a {
+  text-decoration: none;
 }
