@@ -1,14 +1,20 @@
 import moduleCss from "./Sort.module.css";
 import { useState } from "react";
 
-const Sort = ({sortItems}) => {
+const Sort = ({ sortItems, activeSortType, onSortPizzas }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [activeItem, setActiveItem] = useState(sortItems[0]);
+  const activeLabel = sortItems.find(
+    (item) => item.type === activeSortType
+  ).name;
+  // const [activeItem, setActiveItem] = useState(sortItems[0]);
   const onVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
   const onSelectItem = (index) => {
-    setActiveItem(index);
+    if (onSortPizzas) {
+      onSortPizzas(index);
+    }
+    // setActiveItem(index);
     setVisiblePopup(false);
   };
   return (
@@ -27,18 +33,18 @@ const Sort = ({sortItems}) => {
         />
       </svg>
       <b>Сортировка по:</b>
-      <span onClick={onVisiblePopup}> {activeItem}</span>
+      <span onClick={onVisiblePopup}> {activeLabel}</span>
       {visiblePopup && (
         <div className={moduleCss.sort_popup}>
           <ul>
             {sortItems.map((item, index) => (
               <li
-                className={activeItem === index ? moduleCss.active : ""}
+                className={activeSortType === index ? moduleCss.active : ""}
                 onClick={() => onSelectItem(item)}
                 // value={item.value}
                 key={`${item}_${index}`}
               >
-                {item}
+                {item.name}
               </li>
             ))}
           </ul>
