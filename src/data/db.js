@@ -96,3 +96,27 @@ export const pizzaCardItems = [
     price: 395,
   },
 ];
+
+export const pizzaInBusket = [
+  {
+    id: 0,
+    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
+    name: "Сырный цыпленок",
+    type: "тонкое тесто",
+    size: 26,
+  },
+  {
+    id: 1,
+    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
+    name: "Маргарита",
+    type: "тонкое тесто",
+    size: 30,
+  },
+  {
+    id: 2,
+    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
+    name: "Чили",
+    type: "тонкое тесто",
+    size: 40,
+  },
+];

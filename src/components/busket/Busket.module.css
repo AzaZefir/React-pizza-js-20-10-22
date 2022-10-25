@@ -38,6 +38,9 @@
   letter-spacing: 0.01em;
   color: #8d8d8d;
 }
+/* .busketItems >div:first-child img{
+  width: 10%;
+} */
 .busketItems b {
   font-weight: 700;
   font-size: 22px;
