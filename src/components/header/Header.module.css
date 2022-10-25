@@ -40,6 +40,8 @@
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
+  cursor: pointer;
+
 }
 .btn span {
   font-weight: 700;

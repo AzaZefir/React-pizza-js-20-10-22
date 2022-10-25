@@ -15,7 +15,17 @@
   padding: 10px 0;
   overflow: hidden;
 }
-
+.sort >span{
+  color: #fe5f1e;
+    border-bottom: 1px dashed #fe5f1e;
+    cursor: pointer;
+}
+.sort svg{
+  margin-right: 10px;
+}
+.sort b {
+  margin-right: 8px;
+}
 .sort_popup ul {
   overflow: hidden;
   padding-left: 0;
@@ -29,10 +39,7 @@
   background: rgba(254, 95, 30, 0.05);
 }
 .sort_popup ul li.active {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.015em;
+  font-weight: bold;
   color: #fe5f1e;
 }
 .rotated{

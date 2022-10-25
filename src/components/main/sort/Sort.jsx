@@ -1,9 +1,9 @@
 import moduleCss from "./Sort.module.css";
 import { useState } from "react";
 
-const Sort = (props) => {
+const Sort = ({sortItems}) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState(sortItems[0]);
   const onVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
@@ -31,7 +31,7 @@ const Sort = (props) => {
       {visiblePopup && (
         <div className={moduleCss.sort_popup}>
           <ul>
-            {props.sortItems.map((item, index) => (
+            {sortItems.map((item, index) => (
               <li
                 className={activeItem === index ? moduleCss.active : ""}
                 onClick={() => onSelectItem(item)}

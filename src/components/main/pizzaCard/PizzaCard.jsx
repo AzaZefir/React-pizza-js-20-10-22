@@ -2,11 +2,11 @@ import moduleCss from "./PizzaCard.module.css";
 import { useState } from "react";
 import cn from "classnames";
 
-// props = {...pizza} pizza={pizza}
-const PizzaCard = (props) => {
+// = {...pizza} pizza={pizza}
+const PizzaCard = ({type,size,img,name,price}) => {
   const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
-  const [activeTypes, setActiveTypes] = useState(props.type[0]);
+  const [activeTypes, setActiveTypes] = useState(type[0]);
   const [activeSizes, setActiveSizes] = useState(0);
 
   const onSelectType = (index) => {
@@ -20,20 +20,20 @@ const PizzaCard = (props) => {
   
   return (
     <div className={moduleCss.pizzaCard}>
-      <img src={props.img} alt="" />
-      <h3>{props.name}</h3>
+      <img src={img} alt="" />
+      <h3>{name}</h3>
       <div className={moduleCss.pizza_select}>
         <div>
-          {availableTypes.map((type, index) => (
+          {availableTypes.map((types, index) => (
             <span
             key={index}
               onClick={() => onSelectType(index)}
               className={cn({
                 [moduleCss.active]: activeTypes === index,
-                [moduleCss.disabled]: !props.type.includes(index),
+                [moduleCss.disabled]: !type.includes(index),
               })}
             >
-              {type}
+              {types}
             </span>
           ))}
         </div>
@@ -44,7 +44,7 @@ const PizzaCard = (props) => {
               onClick={() => onSelectSize(index)}
               className={cn({
                 [moduleCss.active]: activeSizes === index,
-                [moduleCss.disabled]: !props.size.includes(index),
+                [moduleCss.disabled]: !size.includes(index),
               })}
             >
               {sizes} см.
@@ -53,7 +53,7 @@ const PizzaCard = (props) => {
         </div>
       </div>
       <div className={moduleCss.pizza_block_bottom}>
-        <span className={moduleCss.pizza_block_price}>от {props.price} ₽</span>
+        <span className={moduleCss.pizza_block_price}>от {price} ₽</span>
         <button className="button button_outline button_add">
           <svg
             width="12"

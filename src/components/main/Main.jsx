@@ -4,7 +4,7 @@ import PizzaCard from "./pizzaCard/PizzaCard";
 import Sort from "./sort/Sort";
 import { useState } from 'react';
 
-const Main = (props) => {
+const Main = ({pizzas,setPizzas}) => {
   const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
   const sortItems = ["популярности", "цене", "алфавиту"];
   const [category, setCategory]=useState(null)
@@ -22,7 +22,7 @@ const Main = (props) => {
       <div className={moduleCss.all_pizzas}>
         <h1>Все пиццы</h1>
         <div className={moduleCss.pizzaCard_wrapper}>
-          {props.pizzas.map((pizza,index) => (
+          {pizzas.map((pizza,index) => (
             <PizzaCard key={index} {...pizza} pizza={pizza} />
           ))}
         </div>
