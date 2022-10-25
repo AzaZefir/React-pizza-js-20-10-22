@@ -6,6 +6,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,2],
     price: 395,
+    category:0
   },
   {
     id: 2,
@@ -14,6 +15,8 @@ export const pizzaCardItems = [
     type:[1],
     size:[0,1,2],
     price: 395,
+    category:1
+
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:2
   },
   {
     id: 4,
@@ -30,6 +34,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:2
   },
   {
     id: 5,
@@ -38,6 +43,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:2
   },
   {
     id: 6,
@@ -46,6 +52,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1],
     price: 395,
+    category:4
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:5
   },
   {
     id: 8,
@@ -62,6 +70,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:3
   },{
     id: 9,
     img: "https://cdn.dodostatic.net/static/Img/Products/6a799a1a05a1428cb3b63edfa8cb0aeb_292x292.jpeg",
@@ -69,6 +78,7 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:1
   },
 
   {
@@ -78,6 +88,8 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:5
+
   },
   {
     id: 11,
@@ -86,6 +98,8 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:3
+
   },
   {
     id: 12,
@@ -94,6 +108,8 @@ export const pizzaCardItems = [
     type:[0,1],
     size:[0,1,2],
     price: 395,
+    category:4
+
   },
 ];
 

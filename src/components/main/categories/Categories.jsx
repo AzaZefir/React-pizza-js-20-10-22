@@ -3,12 +3,13 @@ import style from './Categories.module.css'
 import { useState } from 'react';
 import moduleCss from './Categories.module.css'
 // ! props= onSelectCategory={onSelectCategory} category={category} setCategory={setCategory} items={items}
-const Categories = ({items,onSelectCategory}) => {
+const Categories = ({items,onSelectCategory,filterPizzas}) => {
   const [active,setActive]=useState('')
 
   const onSelectItem =(index)=>{
     setActive(index)
     onSelectCategory(index)
+    filterPizzas(index)
   }
 
   return (
