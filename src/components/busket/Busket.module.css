@@ -38,6 +38,9 @@
   letter-spacing: 0.01em;
   color: #8d8d8d;
 }
+.busketHeader >div:last-child{
+  cursor: pointer;
+}
 /* .busketItems >div:first-child img{
   width: 10%;
 } */

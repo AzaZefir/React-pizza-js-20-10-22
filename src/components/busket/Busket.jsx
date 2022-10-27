@@ -7,10 +7,15 @@ import PlusSvg from "../../assets/plusBusket.svg";
 import RemoveSvg from "../../assets/remove.svg";
 import css from "./Busket.module.css";
 import { Link } from "react-router-dom";
-import { pizzaInBusket } from "../../data/db";
 import { EmptyBusket } from "./emptyBusket/EmptyBusket";
 
-export const Busket = () => {
+export const Busket = ({pizzaInBusket,onRemovePizza,onClearBusket}) => {
+
+  let totalPrice = 0;
+  pizzaInBusket.forEach((el) => (totalPrice += Number.parseFloat(el.price)));
+  let totalCount = 0
+  pizzaInBusket.forEach((el)=>(totalCount += Number.parseFloat(el.count)))
+
   return (
     <>
       {pizzaInBusket.length ? (
@@ -20,7 +25,7 @@ export const Busket = () => {
               <img src={BusketSvg} alt="" />
               <h2>Корзина</h2>
             </div>
-            <div>
+            <div onClick={onClearBusket}>
               <img src={TrashSvg} alt="" />
               <span>Очистить корзину</span>
             </div>
@@ -42,17 +47,17 @@ export const Busket = () => {
                   <b>2</b>
                   <img src={PlusSvg} alt="" />
                 </div>
-                <b>770 сом</b>
-                <img src={RemoveSvg} alt="" />
+                <b>{onePizza.price} сом</b>
+                <img onClick={()=>onRemovePizza(onePizza.id)} src={RemoveSvg} alt="" />
               </div>
             </div>
           ))}
           <div className={css.totalCount}>
             <span>
-              Всего пицц:<b> 3 шт.</b>
+              Всего пицц:<b> {totalCount} шт.</b>
             </span>
             <span>
-              Сумма заказа:<b> 900 сом</b>{" "}
+              Сумма заказа:<b> {totalPrice} сом</b>{" "}
             </span>
           </div>
           <div className={css.buttons}>

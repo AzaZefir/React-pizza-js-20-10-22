@@ -8,6 +8,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 0,
     rating:" 6",
+    count:1
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const pizzaCardItems = [
     price: "305",
     category: 1,
     rating: "7",
+    count:1
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const pizzaCardItems = [
     price: '295',
     category: 2,
     rating: '8',
+    count:1
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const pizzaCardItems = [
     price: '395',
     category: 2,
     rating: '4',
+    count:1
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 2,
     rating: "4",
+    count:1
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 4,
     rating: "10",
+    count:1
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export const pizzaCardItems = [
     price: '395',
     category: 5,
     rating: '3',
+    count:1
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 3,
     rating: "7",
+    count:1
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ export const pizzaCardItems = [
     price: '395',
     category: 1,
     rating: '4',
+    count:1
   },
 
   {
@@ -99,6 +108,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 5,
     rating: "1",
+    count:1
   },
   {
     id: 11,
@@ -109,6 +119,7 @@ export const pizzaCardItems = [
     price: "395",
     category: 3,
     rating: "2",
+    count:1
   },
   {
     id: 12,
@@ -119,29 +130,6 @@ export const pizzaCardItems = [
     price: "395",
     category: 4,
     rating: "3",
-  },
-];
-
-export const pizzaInBusket = [
-  {
-    id: 0,
-    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
-    name: "Сырный цыпленок",
-    type: "тонкое тесто",
-    size: 26,
-  },
-  {
-    id: 1,
-    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
-    name: "Маргарита",
-    type: "тонкое тесто",
-    size: 30,
-  },
-  {
-    id: 2,
-    img: "https://cdn.dodostatic.net/static/Img/Products/c940c5751e6d420e997d86c26a8ba16f_292x292.jpeg",
-    name: "Чили",
-    type: "тонкое тесто",
-    size: 40,
+    count:1
   },
 ];

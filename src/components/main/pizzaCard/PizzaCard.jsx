@@ -4,7 +4,7 @@ import cn from "classnames";
 import { PlusPizzaCard } from "../../../common/Svg";
 
 // = {...pizza} pizza={pizza}
-const PizzaCard = ({type,size,img,name,price}) => {
+const PizzaCard = ({type,size,img,name,price,onAddPizza,id,count}) => {
   const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
   const [activeTypes, setActiveTypes] = useState(type[0]);
@@ -18,6 +18,18 @@ const PizzaCard = ({type,size,img,name,price}) => {
     setActiveSizes(index);
     console.log(index);
   };
+  const onAdd = ()=>{
+    const pizza={
+      id,
+      count,
+      name,
+      img,
+      price,
+      size:availableSizes[activeSizes],
+      type:availableTypes[activeTypes]
+    }
+    onAddPizza(pizza)
+  }
   
   return (
     <div className={moduleCss.pizzaCard}>
@@ -55,9 +67,9 @@ const PizzaCard = ({type,size,img,name,price}) => {
       </div>
       <div className={moduleCss.pizza_block_bottom}>
         <span className={moduleCss.pizza_block_price}>от {price} ₽</span>
-        <button className="button button_outline button_add">
+        <button onClick={onAdd} className="button button_outline button_add">
           <PlusPizzaCard/>
-          <span>Добавить </span> <i>3</i>
+          <span>Добавить </span>
         </button>
       </div>
     </div>
