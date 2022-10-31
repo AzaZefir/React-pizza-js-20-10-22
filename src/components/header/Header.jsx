@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = ({ pizzaInBusket }) => {
 
   let totalPrice = 0;
-  pizzaInBusket.forEach((el) => (totalPrice += Number.parseFloat(el.price)));
+  pizzaInBusket.forEach((el) => (totalPrice += Number.parseFloat(el.price)));//0 + 395=395+305= ...=... = ...
   let totalCount = 0
   pizzaInBusket.forEach((el)=>(totalCount += Number.parseFloat(el.count)))
   

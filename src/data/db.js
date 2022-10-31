@@ -133,3 +133,31 @@ export const pizzaCardItems = [
     count:1
   },
 ];
+
+
+export const slideArr = [
+  {
+    id: 1,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+  {
+    id: 2,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+  {
+    id: 3,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+  {
+    id: 4,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+  {
+    id: 5,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+  {
+    id: 6,
+    img: "https://cdn.dodostatic.net/static/Img/Products/525becd5f6d845ea9f83af0af7e44eea_292x292.jpeg",
+  },
+];

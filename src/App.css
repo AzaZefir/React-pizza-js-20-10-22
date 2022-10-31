@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 .container{
   width: 90%;
   margin: 80px auto;
@@ -77,4 +80,22 @@ font-size: 16px;
   font-size: 13px;
   line-height: 22px;
   font-style: normal;
+}
+.sliderSlick h2{
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+  margin-top: 50px;
+  text-align: center;
+}
+.slick-prev:before, .slick-next:before{
+  color:black
+}
+.slick-slide img {
+  width: 100%;
+  margin-left: 10px;
+}
+.slick-track >div>div{
+  width: 100% !important;
 }

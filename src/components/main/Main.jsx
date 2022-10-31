@@ -3,8 +3,9 @@ import moduleCss from "./Main.module.css";
 import PizzaCard from "./pizzaCard/PizzaCard";
 import Sort from "./sort/Sort";
 import { useState } from "react";
+import { SliderPizza } from "./../../common/Slider";
 
-const Main = ({ pizzas, setPizzas,onAddPizza }) => {
+const Main = ({ pizzas, setPizzas, onAddPizza }) => {
   const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
   const sortItems = [
     { name: "популярности", type: "rating" },
@@ -43,6 +44,7 @@ const Main = ({ pizzas, setPizzas,onAddPizza }) => {
 
   return (
     <div>
+      <SliderPizza />
       <div className={moduleCss.wrapper}>
         <Categories
           filterPizzas={filterPizzas}
@@ -61,7 +63,12 @@ const Main = ({ pizzas, setPizzas,onAddPizza }) => {
         <h1>Все пиццы</h1>
         <div className={moduleCss.pizzaCard_wrapper}>
           {pizzasFilter.map((pizza, index) => (
-            <PizzaCard onAddPizza={onAddPizza} key={index} {...pizza} pizza={pizza} />
+            <PizzaCard
+              onAddPizza={onAddPizza}
+              key={index}
+              {...pizza}
+              pizza={pizza}
+            />
           ))}
         </div>
       </div>

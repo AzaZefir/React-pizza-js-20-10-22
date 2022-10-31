@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import EmptyBusketSvg from "../../../assets/emptyBusketSvg.svg";
-import css from './EmptyBusket.module.css'
+import css from "./EmptyBusket.module.css";
 
 export const EmptyBusket = () => {
   return (
@@ -11,7 +12,9 @@ export const EmptyBusket = () => {
         пиццу, перейди на главную страницу.
       </p>
       <img src={EmptyBusketSvg} alt="" />
-      <button>Вернуться назад</button>
+      <Link to="/">
+        <button>Вернуться назад</button>
+      </Link>
     </div>
   );
 };
