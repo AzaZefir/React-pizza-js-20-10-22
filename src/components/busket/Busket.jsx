@@ -1,13 +1,10 @@
 import React from "react";
 import BusketSvg from "../../assets/iconfinder_shopping-cart_2561279 1.svg";
 import TrashSvg from "../../assets/iconfinder_trash-2_3324927 1.svg";
-import PizzaBusketSvg from "../../assets/image 5.svg";
-import MinusSvg from "../../assets/minus.svg";
-import PlusSvg from "../../assets/plusBusket.svg";
-import RemoveSvg from "../../assets/remove.svg";
 import css from "./Busket.module.css";
 import { Link } from "react-router-dom";
 import { EmptyBusket } from "./emptyBusket/EmptyBusket";
+import { BusketCard } from "./BusketCard";
 
 export const Busket = ({pizzaInBusket,onRemovePizza,onClearBusket}) => {
 
@@ -31,26 +28,7 @@ export const Busket = ({pizzaInBusket,onRemovePizza,onClearBusket}) => {
             </div>
           </div>
           {pizzaInBusket.map((onePizza) => (
-            <div className={css.busketItems}>
-              <div>
-                <img src={PizzaBusketSvg} alt="" />
-                <div>
-                  <b>{onePizza.name}</b>
-                  <span>
-                    {onePizza.type}, {onePizza.size} см.
-                  </span>
-                </div>
-              </div>
-              <div className={css.costBlock}>
-                <div>
-                  <img src={MinusSvg} alt="" />
-                  <b>2</b>
-                  <img src={PlusSvg} alt="" />
-                </div>
-                <b>{onePizza.price} сом</b>
-                <img onClick={()=>onRemovePizza(onePizza.id)} src={RemoveSvg} alt="" />
-              </div>
-            </div>
+            <BusketCard {...onePizza} onRemovePizza={onRemovePizza}/>
           ))}
           <div className={css.totalCount}>
             <span>
