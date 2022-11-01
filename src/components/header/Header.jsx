@@ -3,13 +3,7 @@ import Busket from "../../assets/busket.svg";
 import moduleCss from "./Header.module.css";
 import { Link } from "react-router-dom";
 
-const Header = ({ pizzaInBusket }) => {
-
-  let totalPrice = 0;
-  pizzaInBusket.forEach((el) => (totalPrice += Number.parseFloat(el.price)));//0 + 395=395+305= ...=... = ...
-  let totalCount = 0
-  pizzaInBusket.forEach((el)=>(totalCount += Number.parseFloat(el.count)))
-  
+const Header = ({ totalCount,totalPrice }) => {
   return (
     <div className="app-container">
       <div className={moduleCss.wrapper}>

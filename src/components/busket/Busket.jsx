@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 import { EmptyBusket } from "./emptyBusket/EmptyBusket";
 import { BusketCard } from "./BusketCard";
 
-export const Busket = ({pizzaInBusket,onRemovePizza,onClearBusket}) => {
-
-  let totalPrice = 0;
-  pizzaInBusket.forEach((el) => (totalPrice += Number.parseFloat(el.price)));
-  let totalCount = 0
-  pizzaInBusket.forEach((el)=>(totalCount += Number.parseFloat(el.count)))
-
+export const Busket = ({
+  pizzaInBusket,
+  onRemovePizza,
+  onClearBusket,
+  totalCount,
+  totalPrice,
+  onMinusPizza,
+  onAddPizza
+}) => {
   return (
     <>
       {pizzaInBusket.length ? (
@@ -28,7 +30,14 @@ export const Busket = ({pizzaInBusket,onRemovePizza,onClearBusket}) => {
             </div>
           </div>
           {pizzaInBusket.map((onePizza) => (
-            <BusketCard {...onePizza} onRemovePizza={onRemovePizza}/>
+            <BusketCard
+            item={pizzaInBusket.find((el)=> el.id === onePizza.id)}
+              onMinusPizza={onMinusPizza}
+              key={onePizza.id}
+              {...onePizza}
+              onRemovePizza={onRemovePizza}
+              onAddPizza={onAddPizza}
+            />
           ))}
           <div className={css.totalCount}>
             <span>
