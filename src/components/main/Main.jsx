@@ -62,7 +62,7 @@ const Main = ({ pizzas, setPizzas, onAddPizza }) => {
       <div className={moduleCss.all_pizzas}>
         <h1>Все пиццы</h1>
         <div className={moduleCss.pizzaCard_wrapper}>
-          {pizzasFilter.map((pizza, index) => (
+          {pizzas && pizzas.map((pizza, index) => (
             <PizzaCard
               onAddPizza={onAddPizza}
               key={index}

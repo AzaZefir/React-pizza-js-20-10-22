@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Busket } from "./components/busket/Busket";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
-import { pizzaCardItems } from "./data/db";
 import { Routes, Route } from "react-router-dom";
+import axios from 'axios'
 
 function App() {
-  const [pizzas, setPizzas] = useState(pizzaCardItems);
+  const [pizzas, setPizzas] = useState([]);
   const [pizzaInBusket, setPizzaInBusket] = useState([]);
 
   let totalPrice = pizzaInBusket.reduce(
@@ -25,9 +25,11 @@ function App() {
         el.id === item.id ? { ...existPizza, total: existPizza.total + 1 } : el
       );
       setPizzaInBusket(newPizza);
+      localStorage.setItem("pizzaInBusket", JSON.stringify(newPizza));
     } else {
       const newPizza = [...pizzaInBusket, { ...item, total: 1 }];
       setPizzaInBusket(newPizza);
+      localStorage.setItem("pizzaInBusket", JSON.stringify(newPizza));
     }
   };
   //!удаление одной пиццы из корзины
@@ -36,13 +38,40 @@ function App() {
     if (exist.total === 1) {
       const newPizza = pizzaInBusket.filter((el) => el.id !== item.id);
       setPizzaInBusket(newPizza);
+      localStorage.setItem("pizzaInBusket", JSON.stringify(newPizza));
     } else {
       const newPizza = pizzaInBusket.map((el) =>
         el.id === item.id ? { ...exist, total: exist.total - 1 } : el
       );
       setPizzaInBusket(newPizza);
+      localStorage.setItem("pizzaInBusket", JSON.stringify(newPizza));
     }
   };
+  useEffect(() => {
+    setPizzaInBusket(
+      localStorage.getItem("pizzaInBusket")
+        ? JSON.parse(localStorage.getItem("pizzaInBusket"))
+        : []
+    );
+  }, []);
+
+  useEffect(() => {
+    axios.get("./db.json")
+    .then(({data})=>{
+      console.log(data);
+      setPizzas(data.pizzaCardItems)
+    })
+    // fetch("http://localhost:3000/db.json")
+    //   .then((response) => {
+    //     console.log(response);
+    //     response.json()
+    //   .then((data) => {
+    //     console.log(data);
+    //     setPizzas(data.pizzaCardItems);
+    //   });
+    // });
+  }, []);
+
   // //!удаление пиццы из корзины
   // const onRemovePizza = (id) => {
   //   setPizzaInBusket((el) => {
