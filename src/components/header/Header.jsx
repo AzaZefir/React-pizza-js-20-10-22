@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ totalCount,totalPrice }) => {
   return (
-    <div className="app-container">
+    <div className="app-container sticky">
       <div className={moduleCss.wrapper}>
         <Link to="/">
           <div>
