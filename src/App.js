@@ -31,7 +31,7 @@ function App() {
     }
   };
   //!удаление одной пиццы из корзины
-  const onMinusPizza = (item) => {
+  const onRemovePizza = (item) => {
     const exist = pizzaInBusket.find((el) => el.id === item.id);
     if (exist.total === 1) {
       const newPizza = pizzaInBusket.filter((el) => el.id !== item.id);
@@ -43,14 +43,14 @@ function App() {
       setPizzaInBusket(newPizza);
     }
   };
-  //!удаление пиццы из корзины
-  const onRemovePizza = (id) => {
-    setPizzaInBusket((el) => {
-      return el.filter((item) => {
-        return id !== item.id;
-      });
-    });
-  };
+  // //!удаление пиццы из корзины
+  // const onRemovePizza = (id) => {
+  //   setPizzaInBusket((el) => {
+  //     return el.filter((item) => {
+  //       return id !== item.id;
+  //     });
+  //   });
+  // };
 
   //! удаление всей корзины
   const onClearBusket = () => {
@@ -85,7 +85,6 @@ function App() {
                 pizzaInBusket={pizzaInBusket}
                 totalPrice={totalPrice}
                 totalCount={totalCount}
-                onMinusPizza={onMinusPizza}
                 onAddPizza={onAddPizza}
               />
             }

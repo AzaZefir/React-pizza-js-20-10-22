@@ -29,12 +29,12 @@ export const BusketCard = ({
       </div>
       <div className={css.costBlock}>
         <div>
-          <img onClick={()=>onMinusPizza(item)} src={MinusSvg} alt="" />
+          <img onClick={()=>onRemovePizza(item)} src={MinusSvg} alt="" />
           <b>{item.total}</b>
           <img onClick={()=>onAddPizza(item)} src={PlusSvg} alt="" />
         </div>
         <b>{item.total * price} сом</b>
-        <img onClick={() => onRemovePizza(id)} src={RemoveSvg} alt="" />
+        <img onClick={() => onRemovePizza(item)} src={RemoveSvg} alt="" />
       </div>
     </div>
   );

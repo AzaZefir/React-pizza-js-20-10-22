@@ -12,7 +12,6 @@ export const Busket = ({
   onClearBusket,
   totalCount,
   totalPrice,
-  onMinusPizza,
   onAddPizza
 }) => {
   return (
@@ -32,7 +31,6 @@ export const Busket = ({
           {pizzaInBusket.map((onePizza) => (
             <BusketCard
             item={pizzaInBusket.find((el)=> el.id === onePizza.id)}
-              onMinusPizza={onMinusPizza}
               key={onePizza.id}
               {...onePizza}
               onRemovePizza={onRemovePizza}
