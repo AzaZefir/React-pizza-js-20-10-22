@@ -5,7 +5,7 @@ import Sort from "./sort/Sort";
 import { useState } from "react";
 import { SliderPizza } from "./../../common/Slider";
 
-const Main = ({ pizzas, setPizzas, onAddPizza }) => {
+const Main = ({ pizzas, setPizzas, onAddPizza,filterPizzas }) => {
   const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
   const sortItems = [
     { name: "популярности", type: "rating" },
@@ -13,7 +13,7 @@ const Main = ({ pizzas, setPizzas, onAddPizza }) => {
     { name: "алфавиту", type: "name" },
   ];
   const [category, setCategory] = useState(null);
-  const [pizzasFilter, setPizzasFilter] = useState(pizzas);
+  // const [pizzasFilter, setPizzasFilter] = useState(pizzas);
   const [sortPizzas, setSortPIzzas] = useState({
     type: "rating",
   });
@@ -23,20 +23,20 @@ const Main = ({ pizzas, setPizzas, onAddPizza }) => {
   };
 
   // !фильтрация массива пицц в categories
-  const filterPizzas = (el) => {
-    if (el === "") {
-      setPizzasFilter(pizzas);
-      return;
-    }
-    const result = pizzas.filter((item) => {
-      return item.category === el;
-    });
-    setPizzasFilter(result);
-  };
+  // const filterPizzas = (el) => {
+  //   if (el === "") {
+  //     setPizzasFilter(pizzas);
+  //     return;
+  //   }
+  //   const result = pizzas.filter((item) => {
+  //     return item.category === el;
+  //   });
+  //   setPizzasFilter(result);
+  // };
   //!Сортировка пицц в sort
   const onSortPizzas = (type) => {
     setSortPIzzas(type);
-    const sortedPizzas = pizzasFilter.sort((a, b) =>
+    const sortedPizzas = pizzas.sort((a, b) =>
       a[type.type].localeCompare(b[type.type])
     );
     setPizzas(sortedPizzas);

@@ -4,18 +4,21 @@ import { Busket } from "./components/busket/Busket";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
 import { Routes, Route } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
 
 function App() {
   const [pizzas, setPizzas] = useState([]);
   const [pizzaInBusket, setPizzaInBusket] = useState([]);
+  const [pizzasFilter, setPizzasFilter] = useState([]);
 
   let totalPrice = pizzaInBusket.reduce(
     (prevVal, curVal) => prevVal + curVal.total * curVal.price,
     0
   );
-  let totalCount = 0;
-  pizzaInBusket.forEach((el) => (totalCount += Number.parseFloat(el.count)));
+  let totalCount = pizzaInBusket.reduce(
+    (prevVal, curVal) => prevVal + curVal.total * curVal.count,
+    0
+  );
 
   //!добавление пиццы в корзину
   const onAddPizza = (item) => {
@@ -56,11 +59,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    axios.get("./db.json")
-    .then(({data})=>{
-      console.log(data);
-      setPizzas(data.pizzaCardItems)
-    })
+    axios.get("./db.json").then(({ data }) => {
+      setPizzas(data.pizzaCardItems);
+    });
     // fetch("http://localhost:3000/db.json")
     //   .then((response) => {
     //     console.log(response);
@@ -71,6 +72,26 @@ function App() {
     //   });
     // });
   }, []);
+
+  // ! filter pizzas async await
+  useEffect(() => {
+    const filteredPizzas = async () => {
+      const { data } = await axios.get("./db.json");
+      setPizzasFilter(data.pizzaCardItems);
+    };
+    filteredPizzas();
+  }, []);
+ // ! filter pizzas
+const filterPizzas = (el) => {
+    if (el === "") {
+      setPizzas(pizzasFilter);
+      return;
+    }
+    const result = pizzasFilter.filter((item) => {
+      return item.category === el;
+    });
+    setPizzas(result);
+  };
 
   // //!удаление пиццы из корзины
   // const onRemovePizza = (id) => {
@@ -85,6 +106,7 @@ function App() {
   const onClearBusket = () => {
     setPizzaInBusket([]);
   };
+
   return (
     <div className="container">
       <Header
@@ -102,6 +124,7 @@ function App() {
                 onAddPizza={onAddPizza}
                 pizzas={pizzas}
                 setPizzas={setPizzas}
+                filterPizzas={filterPizzas}
               />
             }
           />
